@@ -84,12 +84,36 @@ nil         ; boolean false or empty list
 
 ## 6. Comments
 
+### Single-line Comments
 * Comments in Lisp start with a semicolon `;`.
 * Example:
 
 ```lisp
 ; This is a comment
 (print "Hello, World!")   ; This is also a comment
+```
+
+### Multi-line Comments
+* For multi-line comments, Common Lisp uses `#|` to start and `|#` to end a comment block.
+* Example:
+
+```lisp
+#|
+This is a
+multi-line comment
+in Common Lisp
+|#
+(print "Hello after comment")
+```
+
+* In some Lisp dialects like Scheme, multi-line comments use `#;` to comment out an entire expression.
+* Example in Scheme:
+
+```scheme
+#; (this entire
+    s-expression
+    is commented out)
+(display "Hello")
 ```
 
 ## 7. Evaluation Rules
@@ -114,3 +138,56 @@ Let's break down the expression `(+ (* 2 3) 4)`:
    * `+` is the addition function.
    * `6` and `4` are arguments.
    * Result: `10`.
+
+## 9. Reader Macros
+
+* Reader macros provide shorthand notation in Lisp.
+* Common reader macros include:
+
+```lisp
+'expr      ; shorthand for (quote expr)
+#'expr     ; shorthand for (function expr)
+`expr      ; shorthand for backquote (template)
+,expr      ; unquote within a backquote
+,@expr     ; unquote-splicing within a backquote
+#(1 2 3)   ; vector literal
+#\c        ; character literal (for the character c)
+```
+
+## 10. Package Notation
+
+* Symbols in Lisp belong to packages
+* Package notation uses colons:
+
+```lisp
+package:symbol    ; external symbol access
+package::symbol   ; internal symbol access
+:keyword          ; keyword symbol (self-evaluating)
+```
+
+## 11. String Syntax
+
+* Strings are enclosed in double quotes
+* Special characters are escaped with backslash:
+
+```lisp
+"Hello, World!"           ; basic string
+"Line 1\nLine 2"          ; newline character
+"Tab\tcharacter"          ; tab character
+"Quote: \"quoted text\"." ; escaped quotes
+```
+
+## 12. Numbers and Math Notation
+
+* Lisp supports various number formats:
+
+```lisp
+42        ; integer
+3.14      ; floating point
+-273      ; negative number
+1/3       ; rational number (in Common Lisp)
+#b1010    ; binary (= 10)
+#o755     ; octal (= 493)
+#x1F      ; hexadecimal (= 31)
+#C(2 3)   ; complex number (2+3i in Common Lisp)
+```
