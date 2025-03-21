@@ -1,4 +1,4 @@
-# Topic 3: Variables and Data Types
+# Variables and Data Types
 
 ## 1. Variables in Lisp
 
