@@ -22,3 +22,9 @@
 * `format` outputs the string with a newline.
     * `t` means "print to the standard output."
     * `~%` adds a newline.
+
+##### Using `Write`:
+```lisp
+(write-line "Hello World")
+```
+* `write-line` outputs the string with a newline.
